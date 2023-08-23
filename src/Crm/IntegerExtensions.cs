@@ -1,5 +1,3 @@
-using Crm.DataAccess;
-
 public static class IntegerExtensions
 {
     public static bool TryParse(this int genderIndex, out Gender gender)

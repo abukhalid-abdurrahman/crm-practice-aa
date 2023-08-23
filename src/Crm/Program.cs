@@ -1,14 +1,8 @@
-﻿using Crm.DataAccess;
-using Crm.BusinessLogic;
-using System.Collections;
+﻿using Crm.BusinessLogic;
 
 IClientService clientService = new ClientService();
 
-clientService.CreateClient("Faridun", "Berdiev", "", 10, "", Gender.Female);
-bool result = clientService.RemoveClient("Faridun", "Berdiev");
-Console.WriteLine(result);
-
-// CreateClient();
+CreateClient();
 
 void CreateClient()
 {
@@ -48,7 +42,7 @@ void CreateClient()
     Console.WriteLine("Client Passport Number: {0}", newClient.PassportNumber);
 }
 
-bool ValidateClient(
+static bool ValidateClient(
     string firstName,
     string lastName,
     string middleName,
