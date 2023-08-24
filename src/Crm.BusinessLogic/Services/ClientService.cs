@@ -6,63 +6,68 @@ public sealed class ClientService : IClientService
 {
     private readonly List<Client> _clients;
 
+    private long _id = 0;
+
     public ClientService()
     {
         _clients = new();
     }
 
-    public Client CreateClient(
-        string firstName,
-        string lastName,
-        string middleName,
-        short age,
-        string passportNumber,
-        Gender gender
-    )
+    public ClientInfo CreateClient(ClientInfo clientInfo)
     {
         Client newClient = new()
         {
-            FirstName = firstName,
-            LastName = lastName,
-            MiddleName = middleName,
-            Age = age,
-            PassportNumber = passportNumber,
-            Gender = gender
+            Id = _id++,
+            FirstName = clientInfo.FirstName,
+            LastName = clientInfo.LastName,
+            MiddleName = clientInfo.MiddleName,
+            Age = clientInfo.Age,
+            PassportNumber = clientInfo.PassportNumber,
+            Gender = clientInfo.Gender.ToGenderEnum(),
         };
 
         _clients.Add(newClient);
-        
-        return newClient;
+
+        return clientInfo with { Id = newClient.Id };
     }
 
     public bool RemoveClient(string firstName, string lastName)
-    {
-        foreach(Client item in _clients)
-        {
-            if (item.FirstName.Equals(firstName) && item.LastName.Equals(lastName))
-            {
-                _clients.Remove(item);
-                return true;
-            }
-        }
-        
-        return false;
-    }
-
-    public Client? GetClient(string firstName, string lastName)
     {
         if (firstName is not { Length: > 0 })
             throw new ArgumentNullException(nameof(firstName));
 
         if (lastName is not { Length: > 0 })
             throw new ArgumentNullException(nameof(lastName));
-            
-        foreach(Client client in _clients)
-        {
-            if (client.FirstName.Equals(firstName) && client.LastName.Equals(lastName))
-                return client;
-        }
 
-        return null;
+        int clientIndex = _clients.FindIndex(c => c.FirstName.Equals(firstName) && c.LastName.Equals(lastName));
+        if (clientIndex < 0)
+            return false;
+
+        _clients.RemoveAt(clientIndex);
+        
+        return true;
+    }
+
+    public bool EditClient(long clientId, string newFirstName, string newLastName)
+    {
+        Client? client = _clients.Find(c => c.Id == clientId);
+        if (client is null) return false;
+
+        client.FirstName = newFirstName;
+        client.LastName = newLastName;
+
+        return true;
+    }
+
+    public ClientInfo GetClient(string firstName, string lastName)
+    {
+        if (firstName is not { Length: > 0 })
+            throw new ArgumentNullException(nameof(firstName));
+
+        if (lastName is not { Length: > 0 })
+            throw new ArgumentNullException(nameof(lastName));
+
+        Client? client = _clients.Find(c => c.FirstName.Equals(firstName) && c.LastName.Equals(lastName)) ?? throw new NotFoundException();
+        return client.ToClientInfo();
     }
 }
