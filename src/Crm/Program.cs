@@ -1,6 +1,7 @@
 ﻿using Crm.BusinessLogic;
 
 IClientService clientService = new ClientService();
+IOrderService orderService = new OrderService();
 
 CreateClient();
 
@@ -22,17 +23,15 @@ void CreateClient()
         genderInputStr
     )) return;
 
-    Gender gender = (Gender)int.Parse(genderInputStr);
     short age = short.Parse(ageInputStr);
 
-    Client newClient = clientService.CreateClient(
-        firstName,
-        lastName,
-        middleName,
-        age,
-        passportNumber,
-        gender
-    );
+    ClientInfo newClient = clientService.CreateClient(new ClientInfo()
+    {
+        FirstName = firstName,
+        LastName = lastName,
+        Age = age,
+        PassportNumber = passportNumber
+    });
     Console.WriteLine(newClient);
 
     Console.WriteLine("Client Name: {0}",
@@ -68,13 +67,8 @@ static bool ValidateClient(
     if (passportNumber is { Length: 0 })
         errors.Add("Passport Number field is required!");
 
-    bool isGenderCorrect = int.TryParse(genderStr, out int genderIndex);
-    if (!isGenderCorrect)
-        errors.Add("Please input correct value for gender field!");
-    
-    bool isEnumGenderCorrect = genderIndex.TryParse(out Gender gender);
-    if (!isEnumGenderCorrect)
-        errors.Add("Please input correct value for gender field (0 - Male, 1 - Female)!");
+    if (genderStr != "Female" || genderStr != "Male")
+        errors.Add("Gender is not correct! Please use next valid values: Female and Male!"); 
 
     if (errors is { Count: > 0 })
     {

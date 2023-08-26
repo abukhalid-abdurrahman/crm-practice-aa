@@ -4,8 +4,8 @@ public readonly record struct ClientInfo(
     long Id,
     string FirstName,
     string LastName,
-    string MiddleName,
+    string? MiddleName,
     string Phone,
-    string PassportNumber,
+    string? PassportNumber,
     short Age,
     string Gender);
