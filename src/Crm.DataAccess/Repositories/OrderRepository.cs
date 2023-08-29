@@ -19,21 +19,6 @@ public sealed class OrderRepository : IOrderRepository
 
     public int GetOrderCount(OrderState orderState) => _orders.Count(o => o.State == orderState);
 
-    // public int GetOrderCount(OrderState orderState)
-    // {
-    //     int orderCounter = 0;
-
-    //     foreach(Order order in _orders)
-    //     {
-    //         if(order.State == orderState)
-    //         {
-    //             orderCounter++;
-    //         }
-    //     }
-
-    //     return orderCounter;
-    // }
-
     public bool UpdateOrderState(long orderId, OrderState orderState)
     {
         Order? order = _orders.Find(o => o.Id == orderId);

@@ -1,7 +1,8 @@
 ﻿using Crm.BusinessLogic;
 
 IClientService clientService = new ClientService();
-IOrderService orderService = new OrderService();
+
+IOrderService orderService = OrderServiceFactory.CreateOrderService();
 
 CreateClient();
 
