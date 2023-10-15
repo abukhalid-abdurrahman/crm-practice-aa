@@ -15,7 +15,7 @@ void CreateClient()
     string passportNumber = Console.ReadLine();
     string genderInputStr = Console.ReadLine();
 
-    if(!ValidateClient(
+    if (!ValidateClient(
         firstName,
         lastName,
         middleName,
@@ -69,11 +69,11 @@ static bool ValidateClient(
         errors.Add("Passport Number field is required!");
 
     if (genderStr != "Female" || genderStr != "Male")
-        errors.Add("Gender is not correct! Please use next valid values: Female and Male!"); 
+        errors.Add("Gender is not correct! Please use next valid values: Female and Male!");
 
     if (errors is { Count: > 0 })
     {
-        foreach(string errorMessage in errors)
+        foreach (string errorMessage in errors)
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(errorMessage);

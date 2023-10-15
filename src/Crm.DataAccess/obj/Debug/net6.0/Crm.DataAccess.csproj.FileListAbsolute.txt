@@ -10,3 +10,5 @@
 /Users/faridunberdiev/Documents/NET Academy/Courses/dotNET Express Course/crm-practice/src/Crm.DataAccess/obj/Debug/net6.0/refint/Crm.DataAccess.dll
 /Users/faridunberdiev/Documents/NET Academy/Courses/dotNET Express Course/crm-practice/src/Crm.DataAccess/obj/Debug/net6.0/Crm.DataAccess.pdb
 /Users/faridunberdiev/Documents/NET Academy/Courses/dotNET Express Course/crm-practice/src/Crm.DataAccess/obj/Debug/net6.0/ref/Crm.DataAccess.dll
+/Users/faridunberdiev/Documents/NET Academy/Courses/dotNET Express Course/crm-practice/src/Crm.DataAccess/bin/Debug/net6.0/Crm.DataAccess.runtimeconfig.json
+/Users/faridunberdiev/Documents/NET Academy/Courses/dotNET Express Course/crm-practice/src/Crm.DataAccess/obj/Debug/net6.0/Crm.DataAccess.genruntimeconfig.cache

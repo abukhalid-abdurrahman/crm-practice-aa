@@ -6,7 +6,7 @@ public sealed class StatisticsService : IStatisticsService
 {
     private readonly IOrderRepository _orderRepository;
 
-    public StatisticsService(IOrderRepository  orderRepository)
+    public StatisticsService(IOrderRepository orderRepository)
     {
         _orderRepository = orderRepository;
     }

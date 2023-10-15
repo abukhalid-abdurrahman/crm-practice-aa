@@ -8,8 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "Crm/1.0.0": {
         "dependencies": {
-          "Crm.BusinessLogic": "1.0.0",
-          "Crm.DataAccess": "1.0.0"
+          "Crm.BusinessLogic": "1.0.0"
         },
         "runtime": {
           "Crm.dll": {}

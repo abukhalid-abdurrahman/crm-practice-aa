@@ -44,7 +44,7 @@ public sealed class ClientService : IClientService
             return false;
 
         _clients.RemoveAt(clientIndex);
-        
+
         return true;
     }
 

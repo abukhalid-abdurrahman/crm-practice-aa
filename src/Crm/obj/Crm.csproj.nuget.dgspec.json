@@ -158,9 +158,6 @@
             "projectReferences": {
               "/Users/faridunberdiev/Documents/NET Academy/Courses/dotNET Express Course/crm-practice/src/Crm.BusinessLogic/Crm.BusinessLogic.csproj": {
                 "projectPath": "/Users/faridunberdiev/Documents/NET Academy/Courses/dotNET Express Course/crm-practice/src/Crm.BusinessLogic/Crm.BusinessLogic.csproj"
-              },
-              "/Users/faridunberdiev/Documents/NET Academy/Courses/dotNET Express Course/crm-practice/src/Crm.DataAccess/Crm.DataAccess.csproj": {
-                "projectPath": "/Users/faridunberdiev/Documents/NET Academy/Courses/dotNET Express Course/crm-practice/src/Crm.DataAccess/Crm.DataAccess.csproj"
               }
             }
           }
