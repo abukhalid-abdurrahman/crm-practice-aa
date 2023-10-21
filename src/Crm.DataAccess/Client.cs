@@ -10,4 +10,6 @@ public sealed class Client
     public string? PassportNumber { get; set; }
     public short Age { get; set; }
     public Gender Gender { get; set; }
+
+    public ICollection<Order> Orders { get; set; }
 }
