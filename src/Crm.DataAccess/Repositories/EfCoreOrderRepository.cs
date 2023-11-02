@@ -11,11 +11,6 @@ public sealed class EfCoreOrderRepository : IOrderRepository
         _db = crmDbContext;
     }
 
-    public EfCoreOrderRepository()
-    {
-        _db = new();
-    }
-
     public bool Create(Order order)
     {
         throw new NotImplementedException();

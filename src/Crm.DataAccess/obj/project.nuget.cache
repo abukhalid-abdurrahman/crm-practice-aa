@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bNMtO5TVH1j70SWWQfyB602F2kSFrt9De/10IoHBW+AZxRsovUmdvh5n2jUtDBH2gOZ/QO1/TTV5dPTrvmYwbw==",
+  "dgSpecHash": "RpPTiLJb3zrVwDA56FIImfzjiUEb7xex6GpBOmjVDxMCY67vyJK0GGkbSJ3Nk3H83ZqZZeKRMHEK9g4VjbLtsw==",
   "success": true,
   "projectFilePath": "/Users/faridunberdiev/Documents/NET Academy/Courses/dotNET Express Course/crm-practice/src/Crm.DataAccess/Crm.DataAccess.csproj",
   "expectedPackageFiles": [

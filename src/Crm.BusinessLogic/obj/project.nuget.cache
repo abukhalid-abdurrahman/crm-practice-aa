@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "yfe7n58x9Pu9iKP7PeWvOtt9I6s/ZuuqXPASyxW99Zgqs3Dy3OjIi6OGsSc9a3vmkrwenLHIfdcnMfPJ49wGRw==",
+  "dgSpecHash": "MpcbOq4FgamvwwtQkE80OXU7jgg9RYqcB7IBRozc4ZZz9rqDSyt7wkDmi6dXi813aRnWFNcWS56Lr80iJtVGWA==",
   "success": true,
   "projectFilePath": "/Users/faridunberdiev/Documents/NET Academy/Courses/dotNET Express Course/crm-practice/src/Crm.BusinessLogic/Crm.BusinessLogic.csproj",
   "expectedPackageFiles": [
@@ -29,8 +29,8 @@
     "/Users/faridunberdiev/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "/Users/faridunberdiev/.nuget/packages/system.security.accesscontrol/4.7.0/system.security.accesscontrol.4.7.0.nupkg.sha512",
     "/Users/faridunberdiev/.nuget/packages/system.security.principal.windows/4.7.0/system.security.principal.windows.4.7.0.nupkg.sha512",
-    "/Users/faridunberdiev/.nuget/packages/microsoft.netcore.app.ref/6.0.11/microsoft.netcore.app.ref.6.0.11.nupkg.sha512",
-    "/Users/faridunberdiev/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.11/microsoft.aspnetcore.app.ref.6.0.11.nupkg.sha512"
+    "/Users/faridunberdiev/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.11/microsoft.aspnetcore.app.ref.6.0.11.nupkg.sha512",
+    "/Users/faridunberdiev/.nuget/packages/microsoft.netcore.app.ref/6.0.11/microsoft.netcore.app.ref.6.0.11.nupkg.sha512"
   ],
   "logs": []
 }

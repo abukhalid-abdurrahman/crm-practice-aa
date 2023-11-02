@@ -44,6 +44,10 @@
               "target": "Package",
               "version": "[7.0.12, )"
             },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Npgsql": {
               "target": "Package",
               "version": "[7.0.6, )"
