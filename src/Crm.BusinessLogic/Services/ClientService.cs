@@ -67,7 +67,8 @@ public sealed class ClientService : IClientService
         if (lastName is not { Length: > 0 })
             throw new ArgumentNullException(nameof(lastName));
 
-        Client? client = _clients.Find(c => c.FirstName.Equals(firstName) && c.LastName.Equals(lastName)) ?? throw new NotFoundException();
+        Client? client = _clients.Find(c => c.FirstName.Equals(firstName) && c.LastName.Equals(lastName))
+            ?? throw new NotFoundException();
         return client.ToClientInfo();
     }
 }
