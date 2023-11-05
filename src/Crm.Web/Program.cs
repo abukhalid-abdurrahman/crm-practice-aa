@@ -1,37 +1,26 @@
 using Crm.BusinessLogic;
 using Crm.Web;
-using Microsoft.AspNetCore.Authorization;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
+builder.Services.Configure<ConnectionStrings>(builder.Configuration.GetSection(Constants.ConnectionStringsSectionName));
+
 builder.Services.AddHttpContextAccessor();
-builder.Services.ConfigureCrmServices();
+builder.Services.ConfigureCrmServices(builder.Configuration);
 
 builder.Services.AddAuthentication
-    (ApiKeyAuthenticationOptions.DefaultScheme)
-    .AddScheme<ApiKeyAuthenticationOptions, ApiKeyHandler>();
-
-builder.Services.AddAuthentication();
-
-builder.Services.AddAuthorization(options => 
-{
-    options.AddPolicy("ApiKey", policy =>
-    {
-        policy.AddAuthenticationSchemes("ApiKeyScheme");
-        policy.Requirements.Add(new ApiKeyRequirement());
-    });
-});
-
-builder.Services.AddScoped<IAuthorizationHandler, ApiKeyHandler>();
+    (ApiKeyAuthenticationOptions.ApiKeyScheme)
+        .AddScheme<ApiKeyAuthenticationOptions, ApiKeyAuthenticationHandler>(ApiKeyAuthenticationOptions.ApiKeyScheme,
+            options => { });
 
 builder.Services.AddControllers();
 
 WebApplication app = builder.Build();
 
-app.MapControllers();
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.UseMiddleware<ExceptionHandlingMiddleware>();
+app.MapControllers();
 app.Run();

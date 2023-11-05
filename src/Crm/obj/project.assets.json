@@ -438,7 +438,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Crm.DataAccess": "1.0.0"
+          "Crm.DataAccess": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "7.0.0"
         },
         "compile": {
           "bin/placeholder/Crm.BusinessLogic.dll": {}
@@ -451,6 +452,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "7.0.0",
           "Npgsql": "7.0.6",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "7.0.11",
           "System.Data.SqlClient": "4.8.5"

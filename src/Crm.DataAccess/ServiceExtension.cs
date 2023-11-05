@@ -1,14 +1,16 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Crm.DataAccess;
 
 public static class ServiceExtension
 {
-    public static void ConfigureDataAcces(this IServiceCollection services)
+    private static string DefaultConnectionKeyName => "DefaultConnection";
+    public static void ConfigureDataAcces(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContext<CrmDbContext>(
-            opt => opt.UseNpgsql(DatabaseHelper.ConnectionString));
+            opt => opt.UseNpgsql(configuration.GetConnectionString(DefaultConnectionKeyName)));
 
         services.AddScoped<IOrderRepository, EfCoreOrderRepository>();
     }
